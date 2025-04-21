@@ -1,7 +1,7 @@
 'use client';
 import { ScholarshipCard } from '@/components/ScholarshipCard';
 import { FilterSidebar } from '@/components/FilterSidebar';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { SearchInput } from '@/components/ui/search-input';
@@ -10,7 +10,7 @@ import { Scholarship } from '@/types/scholarship';
 import { SlidersHorizontal, Search, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function SearchPage() {
+function SearchPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -177,5 +177,13 @@ export default function SearchPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div className="container py-20 text-center">Loading scholarships...</div>}>
+      <SearchPageContent />
+    </Suspense>
   );
 }
