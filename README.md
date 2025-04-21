@@ -4,7 +4,7 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-13.5.4-black?logo=next.js)](https://nextjs.org/)  
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue?logo=typescript)](https://www.typescriptlang.org/)  
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.3-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)  
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.3-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
 
 A modern scholarship discovery platform powered by AI, helping international students locate funding opportunities at top U.S. universities.
 
@@ -56,6 +56,7 @@ A modern scholarship discovery platform powered by AI, helping international stu
 ### Installation
 
 1. **Clone** the repository:
+
    ```bash
    git clone https://github.com/Davidson3556/ScholarSeeker-AI.git
    cd ScholarSeeker-AI
@@ -65,8 +66,6 @@ A modern scholarship discovery platform powered by AI, helping international stu
    ```bash
    pnpm install
    ```
-
-
 
 ### Running Locally
 
@@ -89,8 +88,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 │   ├── home/
 │   ├── scholarship/
 │   └── ui/
-├── lib/                   
-├── services/              
+├── lib/
+├── services/
 ├── types/                 # TypeScript interfaces & types
 ├── public/                # Static assets (images, fonts)
 └── styles/                # Global & theme styles
@@ -111,5 +110,3 @@ Vercel will automatically:
 - Build & optimize assets
 - Enable HTTPS and CDN caching
 - Provide deployment previews and analytics
-
-

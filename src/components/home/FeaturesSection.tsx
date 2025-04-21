@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import { GraduationCap, BookOpen, Globe } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,9 +9,9 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.3,
-      delayChildren: 0.2
-    }
-  }
+      delayChildren: 0.2,
+    },
+  },
 };
 
 const cardVariants = {
@@ -19,8 +19,8 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 120 }
-  }
+    transition: { type: "spring", stiffness: 120 },
+  },
 };
 
 const headingVariants = {
@@ -28,8 +28,8 @@ const headingVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 120 }
-  }
+    transition: { type: "spring", stiffness: 120 },
+  },
 };
 
 export const FeaturesSection: React.FC = () => {
@@ -62,7 +62,8 @@ export const FeaturesSection: React.FC = () => {
                 Find Schools
               </h3>
               <p className="text-muted-foreground text-center max-w-xs mx-auto">
-                Discover top U.S. universities offering scholarships for international students
+                Discover top U.S. universities offering scholarships for
+                international students
               </p>
             </div>
           </motion.div>
@@ -76,7 +77,8 @@ export const FeaturesSection: React.FC = () => {
                 Match Scholarships
               </h3>
               <p className="text-muted-foreground text-center max-w-xs  mx-auto">
-                AI-powered matching based on your academic profile and preferences
+                AI-powered matching based on your academic profile and
+                preferences
               </p>
             </div>
           </motion.div>
@@ -90,7 +92,8 @@ export const FeaturesSection: React.FC = () => {
                 Apply Confidently
               </h3>
               <p className="text-muted-foreground text-center max-w-xs mx-auto">
-                Get detailed requirements and deadlines for successful applications
+                Get detailed requirements and deadlines for successful
+                applications
               </p>
             </div>
           </motion.div>

@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface CtaSectionProps {
   title?: string;
@@ -12,7 +12,7 @@ export function CtaSection({
   title = "Ready to Find Your Scholarship?",
   description = "Start your search today and discover opportunities at top U.S. universities",
   buttonText = "Start Searching Now",
-  buttonHref = "/search"
+  buttonHref = "/search",
 }: CtaSectionProps) {
   return (
     <section className="flex items-center justify-center py-12 md:py-16 bg-[#6060b6] text-white">

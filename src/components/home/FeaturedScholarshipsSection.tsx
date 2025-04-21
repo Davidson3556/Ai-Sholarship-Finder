@@ -1,9 +1,9 @@
-'use client'
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import { FeaturedScholarshipCard } from '@/components/scholarship/FeaturedScholarshipCard';
-import { motion } from 'framer-motion';
+"use client";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { FeaturedScholarshipCard } from "@/components/scholarship/FeaturedScholarshipCard";
+import { motion } from "framer-motion";
 
 interface Scholarship {
   id: string;
@@ -26,14 +26,14 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
+      delayChildren: 0.3,
+    },
+  },
 };
 
 const titleVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0 },
 };
 
 export function FeaturedScholarshipsSection({
@@ -49,10 +49,12 @@ export function FeaturedScholarshipsSection({
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold">Featured Scholarships</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Featured Scholarships
+          </h2>
           <motion.div whileHover={{ x: 5 }}>
-            <Button 
-              variant="link" 
+            <Button
+              variant="link"
               className="text-scholar-700 font-medium flex items-center gap-2 p-0"
               asChild
             >
@@ -63,7 +65,7 @@ export function FeaturedScholarshipsSection({
             </Button>
           </motion.div>
         </motion.div>
-        
+
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
@@ -72,10 +74,7 @@ export function FeaturedScholarshipsSection({
           viewport={{ once: true, amount: 0.1 }}
         >
           {featuredScholarships.map((scholarship) => (
-            <FeaturedScholarshipCard
-              key={scholarship.id}
-              {...scholarship}
-            />
+            <FeaturedScholarshipCard key={scholarship.id} {...scholarship} />
           ))}
         </motion.div>
       </div>

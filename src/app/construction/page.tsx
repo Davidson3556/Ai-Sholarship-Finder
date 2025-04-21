@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Construction } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Construction } from "lucide-react";
 
-const LAUNCH_DATE = new Date(2025, 4, 1, 0, 0, 0); 
+const LAUNCH_DATE = new Date(2025, 4, 1, 0, 0, 0);
 
 export default function UnderConstruction() {
   const [timeLeft, setTimeLeft] = useState({
-    days: '00',
-    hours: '00',
-    minutes: '00',
-    seconds: '00',
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
   });
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function UnderConstruction() {
       const now = new Date().getTime();
       const distance = LAUNCH_DATE.getTime() - now;
       if (distance <= 0) {
-        setTimeLeft({ days: '00', hours: '00', minutes: '00', seconds: '00' });
+        setTimeLeft({ days: "00", hours: "00", minutes: "00", seconds: "00" });
         clearInterval(timer);
         return;
       }
@@ -30,10 +30,10 @@ export default function UnderConstruction() {
       const seconds = Math.floor((distance / 1000) % 60);
 
       setTimeLeft({
-        days: String(days).padStart(2, '0'),
-        hours: String(hours).padStart(2, '0'),
-        minutes: String(minutes).padStart(2, '0'),
-        seconds: String(seconds).padStart(2, '0'),
+        days: String(days).padStart(2, "0"),
+        hours: String(hours).padStart(2, "0"),
+        minutes: String(minutes).padStart(2, "0"),
+        seconds: String(seconds).padStart(2, "0"),
       });
     };
 
@@ -43,10 +43,10 @@ export default function UnderConstruction() {
   }, []);
 
   const countdownArray = [
-    ['Days', timeLeft.days],
-    ['Hours', timeLeft.hours],
-    ['Minutes', timeLeft.minutes],
-    ['Seconds', timeLeft.seconds],
+    ["Days", timeLeft.days],
+    ["Hours", timeLeft.hours],
+    ["Minutes", timeLeft.minutes],
+    ["Seconds", timeLeft.seconds],
   ];
 
   return (
@@ -55,7 +55,7 @@ export default function UnderConstruction() {
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
           className="flex justify-center"
         >
           <div className="p-6 bg-white dark:bg-gray-800 rounded-full shadow-xl">
@@ -78,7 +78,8 @@ export default function UnderConstruction() {
           transition={{ delay: 0.5 }}
           className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mt-4"
         >
-          The page you are looking for is under construction.currently building something extraordinary! Stay tuned for an amazing experience.
+          The page you are looking for is under construction.currently building
+          something extraordinary! Stay tuned for an amazing experience.
         </motion.p>
 
         <motion.div
@@ -88,14 +89,19 @@ export default function UnderConstruction() {
           className="flex justify-center gap-4 mt-8"
         >
           {countdownArray.map(([label, value]) => (
-            <div key={label} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-              <div className="text-2xl md:text-4xl font-bold text-purple-600">{value}</div>
-              <div className="text-gray-500 dark:text-gray-400 text-sm mt-1">{label}</div>
+            <div
+              key={label}
+              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md"
+            >
+              <div className="text-2xl md:text-4xl font-bold text-purple-600">
+                {value}
+              </div>
+              <div className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+                {label}
+              </div>
             </div>
           ))}
         </motion.div>
-
-      
 
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (
@@ -114,7 +120,7 @@ export default function UnderConstruction() {
               transition={{
                 duration: Math.random() * 3 + 2,
                 repeat: Infinity,
-                ease: 'linear',
+                ease: "linear",
               }}
             />
           ))}

@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -11,15 +17,21 @@ interface ScholarshipCardProps {
   className?: string;
 }
 
-export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({ scholarship, className }) => {
+export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({
+  scholarship,
+  className,
+}) => {
   const hasApplicationUrl = !!scholarship.applicationUrl;
-  
+
   return (
     <Card className={cn("h-full flex flex-col", className)}>
       <CardHeader className="pb-2">
         <div className="flex justify-between items-start">
           <CardTitle className="text-lg">{scholarship.name}</CardTitle>
-          <Badge variant="outline" className="bg-[#6868c7] text-white border-scholar-200">
+          <Badge
+            variant="outline"
+            className="bg-[#6868c7] text-white border-scholar-200"
+          >
             {scholarship.amount}
           </Badge>
         </div>
@@ -37,7 +49,10 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({ scholarship, c
             {scholarship.category}
           </Badge>
           {scholarship.international && (
-            <Badge variant="secondary" className="text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">
+            <Badge
+              variant="secondary"
+              className="text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
+            >
               International
             </Badge>
           )}
@@ -45,13 +60,14 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({ scholarship, c
       </CardContent>
       <CardFooter className="pt-2 flex justify-between">
         <Button variant="outline" size="sm" asChild>
-          <Link href={`/school/${scholarship.schoolId}`}>
-            View School
-          </Link>
+          <Link href={`/school/${scholarship.schoolId}`}>View School</Link>
         </Button>
-        <Button 
-          size="sm" 
-          className={cn("gap-2 bg-[#6868c7]", !hasApplicationUrl && "opacity-50 cursor-not-allowed")}
+        <Button
+          size="sm"
+          className={cn(
+            "gap-2 bg-[#6868c7]",
+            !hasApplicationUrl && "opacity-50 cursor-not-allowed",
+          )}
           disabled={!hasApplicationUrl}
           asChild={hasApplicationUrl}
         >

@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import ScholarLight from './.././../public/images/errors.png';
-import  ScholarDark from './.././../public/images/errors2.png';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import ScholarLight from "./.././../public/images/errors.png";
+import ScholarDark from "./.././../public/images/errors2.png";
 
 export default function NotFound() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     setIsDark(mediaQuery.matches);
-    
+
     const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mediaQuery.addEventListener('change', handler);
-    return () => mediaQuery.removeEventListener('change', handler);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
   return (
@@ -33,7 +33,7 @@ export default function NotFound() {
           />
           <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
             {[1, 2, 3].map((i) => (
-              <div 
+              <div
                 key={i}
                 className="w-2 h-2 bg-[#6868c7] dark:bg-[#5c5c9f] rounded-full animate-pulse"
                 style={{ animationDelay: `${i * 0.2}s` }}
@@ -53,7 +53,7 @@ export default function NotFound() {
             Page Not Found
           </p>
           <p className="text-gray-600 dark:text-gray-400 md:text-lg">
-          Retrace your URL path
+            Retrace your URL path
           </p>
           <Link href="/" className="inline-block">
             <Button

@@ -1,12 +1,12 @@
-import { HeroSection } from '@/components/home/HeroSection';
-import { FeaturesSection } from '@/components/home/FeaturesSection';
-import { FeaturedScholarshipsSection } from '@/components/home/FeaturedScholarshipsSection';
-import { CtaSection } from '@/components/home/CtaSection';
-import { ScholarshipService } from '@/services/scholarshipService';
+import { HeroSection } from "@/components/home/HeroSection";
+import { FeaturesSection } from "@/components/home/FeaturesSection";
+import { FeaturedScholarshipsSection } from "@/components/home/FeaturedScholarshipsSection";
+import { CtaSection } from "@/components/home/CtaSection";
+import { ScholarshipService } from "@/services/scholarshipService";
 
 export default async function HomePage() {
-  const featuredScholarships = await ScholarshipService.getScholarships().then(scholarships => 
-    scholarships.slice(0, 3)
+  const featuredScholarships = await ScholarshipService.getScholarships().then(
+    (scholarships) => scholarships.slice(0, 3),
   );
 
   return (
@@ -14,7 +14,9 @@ export default async function HomePage() {
       <main className="flex-grow">
         <HeroSection />
         <FeaturesSection />
-        <FeaturedScholarshipsSection featuredScholarships={featuredScholarships} />
+        <FeaturedScholarshipsSection
+          featuredScholarships={featuredScholarships}
+        />
         <CtaSection />
       </main>
     </div>
