@@ -81,7 +81,6 @@ export const Footer = () => {
           </Link>
         </Button>
 
-        {/* LinkedIn */}
         <Button variant="ghost" size="icon" asChild aria-label="LinkedIn">
           <Link
             href="https://www.linkedin.com/in/olawaedavidson"
@@ -93,7 +92,6 @@ export const Footer = () => {
           </Link>
         </Button>
 
-        {/* Email */}
         <Button variant="ghost" size="icon" asChild aria-label="Email">
           <a
             href="mailto:olawaledavidson1@gmail.com"
@@ -106,7 +104,6 @@ export const Footer = () => {
     </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-gray-800 dark:border-gray-300 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between text-gray-400 dark:text-gray-600 text-sm">
             <div className="text-center md:text-left">

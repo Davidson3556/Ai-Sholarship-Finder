@@ -51,12 +51,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
             >
               About
             </Link>
-            <Link 
-              href="/contact" 
-              className="relative font-medium hover:text-[#6868c7]"
-            >
-              Contact
-            </Link>
+            
           </nav>
           
           <Button 

@@ -1,6 +1,13 @@
-
-
 import { School, Scholarship } from "@/types/scholarship";
+
+type ScholarshipFilters = {
+  states?: string[];
+  degreeLevels?: string[];
+  categories?: string[];
+  international?: boolean;
+  minAmount?: number;
+  maxAmount?: number;
+};
 
 const schools: School[] = [
   {
@@ -511,7 +518,10 @@ export const ScholarshipService = {
     return Promise.resolve(schools.find(school => school.id === id));
   },
 
-  searchScholarships: (query: string, filters: any = {}): Promise<Scholarship[]> => {
+  searchScholarships: (
+    query: string,
+    filters: ScholarshipFilters = {}
+  ): Promise<Scholarship[]> => {
     let results = [...scholarships];
     
     if (query) {
@@ -526,31 +536,34 @@ export const ScholarshipService = {
     
     if (filters.states && filters.states.length > 0) {
       results = results.filter(scholarship => 
-        filters.states.includes(scholarship.location)
+        filters.states?.includes(scholarship.location)
       );
     }
     
     if (filters.degreeLevels && filters.degreeLevels.length > 0) {
       results = results.filter(scholarship => 
-        filters.degreeLevels.includes(scholarship.degreeLevel)
+        filters.degreeLevels?.includes(scholarship.degreeLevel)
       );
     }
     
+    // Filter by categories
     if (filters.categories && filters.categories.length > 0) {
       results = results.filter(scholarship => 
-        filters.categories.includes(scholarship.category)
+        filters.categories?.includes(scholarship.category)
       );
     }
     
+    // Filter by international
     if (filters.international) {
       results = results.filter(scholarship => scholarship.international);
     }
     
+    // Filter by amount
     if (filters.minAmount !== undefined && filters.maxAmount !== undefined) {
       results = results.filter(scholarship => {
         let amount = 0;
         if (scholarship.amount.includes("Full Tuition")) {
-          amount = 50000; 
+          amount = 50000;
         } else {
           const matches = scholarship.amount.match(/\$?(\d{1,3}(,\d{3})*(\.\d+)?)/);
           if (matches) {
@@ -564,8 +577,7 @@ export const ScholarshipService = {
             }
           }
         }
-        
-        return amount >= filters.minAmount && amount <= filters.maxAmount;
+        return amount >= filters.minAmount! && amount <= filters.maxAmount!;
       });
     }
     

@@ -1,4 +1,3 @@
-// components/FilterSidebar.tsx
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,18 +5,21 @@ import { Button } from '@/components/ui/button';
 import { Loader2, X, Info } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
+// Define type for filters
+export type FiltersType = {
+  states: string[];
+  degreeLevels: string[];
+  categories: string[];
+  international: boolean;
+  minAmount: number;
+  maxAmount: number;
+};
+
 interface FilterSidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  filters: {
-    states: string[];
-    degreeLevels: string[];
-    categories: string[];
-    international: boolean;
-    minAmount: number;
-    maxAmount: number;
-  };
-  onFilterChange: (filters: any) => void;
+  filters: FiltersType;
+  onFilterChange: (filters: FiltersType) => void;
   isLoading: boolean;
 }
 
