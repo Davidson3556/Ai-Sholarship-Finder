@@ -60,11 +60,12 @@ export default function AboutPage() {
             Project Mission
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-center">
-            ScholarSeeker AI is an assessment exercise for VisaCompanion.ai. It
-            helps international students find relevant scholarships. This
+            ScholarSeeker AI helps international students find relevant scholarships. This
             platform leverages advanced AI algorithms to simplify the search
             process, providing accurate, up-to-date scholarship information from
             top U.S. universities.
+
+         
           </p>
         </motion.section>
 

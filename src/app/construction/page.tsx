@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Construction } from "lucide-react";
 
-const LAUNCH_DATE = new Date(2025, 4, 1, 0, 0, 0);
+const LAUNCH_DATE = new Date(2025, 5, 1, 0, 0, 0);
 
 export default function UnderConstruction() {
   const [timeLeft, setTimeLeft] = useState({

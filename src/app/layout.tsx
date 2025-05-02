@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "ScholarSeeker AI",
     description:
       "AI-powered scholarship discovery platform for international students",
-    url: "https://scholerseeker.ai",
+    url: "https://ai-sholarship-finder.vercel.app/",
     siteName: "ScholarSeeker AI",
     images: [
       {
